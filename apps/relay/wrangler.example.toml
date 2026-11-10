@@ -1,0 +1,13 @@
+name = "tmail-vps-relay"
+main = "worker.mjs"
+compatibility_date = "2025-04-01"
+workers_dev = false
+preview_urls = false
+
+[vars]
+RELAY_INGEST_URL = "https://ingress.example.com/ingest"
+MAX_BYTES = "10485760"
+
+# Supply RELAY_INGEST_TOKEN using Wrangler secrets, never vars or source control.
+# Must equal the VPS TMAIL_INGEST_TOKEN; never use a mailbox read token.
+# Email Routing must target this Worker. No R2 binding or HTTP route is needed.

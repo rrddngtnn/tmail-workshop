@@ -1,0 +1,13 @@
+name = "tmail-workshop"
+main = "worker.mjs"
+compatibility_date = "2025-04-01"
+
+# Store API_TOKEN and MAILBOX_TOKENS as secrets, not in this file.
+# MAILBOX_TOKENS is optional; omitting it enables legacy shared-mailbox mode.
+[vars]
+MAX_BYTES = "10485760"
+
+# Replace with your private R2 bucket name before running the Worker.
+[[r2_buckets]]
+binding = "MAIL"
+bucket_name = "CHANGE-ME"

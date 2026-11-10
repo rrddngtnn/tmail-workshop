@@ -1,0 +1,19 @@
+services:
+  tmail:
+    build: .
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      TMAIL_INGEST_TOKEN: ${TMAIL_INGEST_TOKEN:?Set a private ingest token}
+      MAILBOX_TOKENS: ${MAILBOX_TOKENS:?Set a private JSON mailbox token map}
+    volumes:
+      - mail-data:/data
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  mail-data:

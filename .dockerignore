@@ -1,0 +1,6 @@
+**
+!Dockerfile
+!LICENSE
+!apps/
+!apps/vps/
+!apps/vps/server.mjs
