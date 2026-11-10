@@ -1,0 +1,25 @@
+{
+  "name": "tmail-workshop-tests",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 test/*.test.js",
+    "test:integration": "node --test --test-concurrency=1 test/runtime.test.js"
+  },
+  "devDependencies": {
+    "miniflare": "4.20260730.0"
+  },
+  "overrides": {
+    "miniflare": {
+      "undici": "7.30.2",
+      "sharp": "0.35.5"
+    }
+  },
+  "engines": {
+    "node": ">=26"
+  },
+  "dependencies": {
+    "@bradenmacdonald/s3-lite-client": "1.0.1",
+    "smol-toml": "1.9.1"
+  }
+}
